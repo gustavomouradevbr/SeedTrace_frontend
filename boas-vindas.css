@@ -1,0 +1,130 @@
+/* Reset básico e fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Cor de fundo verde clara, como na imagem */
+    background-color: #d1fae5; 
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.welcome-card {
+    background-color: #FFFFFF;
+    /* Bordas bem arredondadas, como na imagem */
+    border-radius: 24px; 
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.logo-area {
+    margin-bottom: 24px;
+    /* Adicione 'display: none;' a este seletor se for usar uma <img> real */
+    .logo-placeholder {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #065f46; /* Verde escuro para o texto da logo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Estilo para sua imagem de logo (quando você adicionar) */
+.logo {
+    max-width: 180px;
+    height: auto;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    color: #1f2937; /* Cinza escuro */
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.95rem; /* 15px */
+    color: #6b7280; /* Cinza médio */
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os botões */
+    margin-bottom: 30px;
+}
+
+.button {
+    border: none;
+    border-radius: 12px; /* Bordas arredondadas dos botões */
+    padding: 16px 20px;
+    font-size: 1.1rem; /* 18px */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3;
+}
+
+.button:hover {
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button span {
+    font-size: 0.85rem; /* 14px */
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+/* Botão Verde - Primário */
+.button.primary {
+    background-color: #34d399; /* Verde brilhante, como na imagem */
+    color: #064e3b; /* Texto verde escuro para contraste */
+}
+.button.primary span {
+    color: #064e3b;
+    opacity: 0.8;
+}
+.button.primary:hover {
+    background-color: #10b981;
+}
+
+/* Botão Cinza - Secundário */
+.button.secondary {
+    background-color: #6b7280; /* Cinza escuro, como na imagem */
+    color: #FFFFFF;
+}
+.button.secondary span {
+    color: #e5e7eb;
+    opacity: 0.9;
+}
+.button.secondary:hover {
+    background-color: #4b5563;
+}
+
+.footer-text {
+    font-size: 0.8rem; /* 12px */
+    color: #9ca3af; /* Cinza claro */
+    line-height: 1.4;
+}
