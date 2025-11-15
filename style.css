@@ -6,15 +6,28 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
+/* Regra de body geral */
 body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #d1fae5;
+    margin: 0;
+    /* Adiciona espaço no rodapé para o menu fixo não cobrir o conteúdo */
+    padding-bottom: 80px; 
+}
+
+/* Para as páginas de "cartão" centralizado */
+body.centered-page {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Cor de fundo verde clara, como na imagem */
-    background-color: #d1fae5; 
     padding: 20px;
+    background-color: #d1fae5; 
 }
+
+/* ========================================= */
+/* === Estilos das Páginas Centralizadas === */
+/* ========================================= */
 
 .container {
     width: 100%;
@@ -23,27 +36,11 @@ body {
 
 .welcome-card {
     background-color: #FFFFFF;
-    /* Bordas bem arredondadas, como na imagem */
     border-radius: 24px; 
     padding: 35px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
 }
-
-.logo-area {
-    margin-bottom: 24px;
-    /* Adicione 'display: none;' a este seletor se for usar uma <img> real */
-    .logo-placeholder {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #065f46; /* Verde escuro para o texto da logo */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-}
-
 
 h1 {
     font-size: 1.75rem; /* 28px */
@@ -121,4 +118,319 @@ h1 {
     font-size: 0.8rem; /* 12px */
     color: #9ca3af; /* Cinza claro */
     line-height: 1.4;
+}
+
+/* ========================================= */
+/* === Estilos para Telas de Formulário === */
+/* ========================================= */
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left; /* Alinha labels à esquerda */
+    width: 100%;
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar a linha toda */
+    font-size: 0.9rem;  /* 14px */
+    font-weight: 500;
+    color: #4b5563; /* Cinza escuro */
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem; /* 16px */
+    color: #1f2937;
+    border: 1px solid #d1d5db; /* Borda cinza clara */
+    border-radius: 10px;
+    background-color: #f9fafb; /* Fundo levemente acinzentado */
+    box-sizing: border-box; /* Garante que padding não estoure o tamanho */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #34d399; /* Borda verde ao focar */
+    box-shadow: 0 0 0 2px #d1fae5; /* Sombra verde clara */
+}
+
+/* Link de rodapé (Ex: "Não consegue acessar?") */
+.footer-link {
+    font-size: 0.85rem; /* 14px */
+    font-weight: 500;
+    color: #6b7280; /* Cinza médio */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #1f2937;
+    text-decoration: underline;
+}
+
+.form-container .button.primary {
+    font-size: 1.05rem; /* 17px */
+    padding: 15px 20px;
+    margin-top: 5px; /* Espaço acima do botão */
+}
+
+/* ========================================= */
+/* === Estilos para Tela de Confirmação === */
+/* ========================================= */
+
+.icon-area {
+    margin-bottom: 24px;
+}
+
+.button-group-confirm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaço entre os botões */
+    margin-top: 25px; /* Espaço acima dos botões */
+    width: 100%;
+}
+
+.button-group-confirm .button.primary {
+    font-size: 1.05rem; /* 17px */
+    padding: 15px 20px;
+}
+
+.button.link-style {
+    background-color: #f3f4f6; /* Fundo cinza claro */
+    color: #4b5563; /* Texto cinza escuro */
+    font-weight: 500;
+    font-size: 1.05rem; /* 17px */
+    padding: 15px 20px;
+}
+
+.button.link-style:hover {
+    background-color: #e5e7eb; /* Cinza um pouco mais escuro no hover */
+    color: #1f2937;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================= */
+/* === Estilos para o Dashboard Agricultor === */
+/* ========================================= */
+
+.dash-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    box-shadow: 0 8px 24px rgba(6, 95, 70, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dash-header .greeting {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.dash-header .logout-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.dash-header .logout-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateX(2px);
+}
+
+/* Container principal para o Dashboard */
+.dash-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    
+    /* MELHORIA: Espaçamento movido para cá para consistência */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 24px; /* Espaço abaixo do header fixo */
+    padding-bottom: 20px;
+}
+
+.lote-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    /* MELHORIA: Padding lateral removido daqui */
+    margin-bottom: 20px;
+}
+
+.lote-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #f9fafb 100%);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
+    border-radius: 16px 0 0 16px;
+}
+
+.lote-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+.lote-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.lote-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.lote-info .status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+/* Cores dos status com estilos modernos */
+.status.a-caminho {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status.entregue {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status.aguardando {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.lote-action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Modificador de botão pequeno para os cards */
+.button.small {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    flex-direction: row;
+    line-height: 1;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.button.small span {
+    display: none;
+}
+
+.button.small:active {
+    transform: scale(0.95);
+}
+
+/* Rodapé Fixo de Ajuda */
+.help-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    color: #1f2937;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.3px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.help-footer p {
+    margin: 0;
+    color: #1f2937;
+}
+
+/* ========================================= */
+/* === MELHORIA: Responsividade (Mobile) === */
+/* ========================================= */
+
+@media (max-width: 600px) {
+    /* Ajusta o cabeçalho em telas pequenas */
+    .dash-header {
+        padding: 16px 20px;
+    }
+    .dash-header .greeting {
+        font-size: 1.15rem;
+    }
+
+    /* Ajusta o container principal em telas pequenas */
+    .dash-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 16px;
+    }
+
+    /* Empilha o título e o status em telas pequenas */
+    .lote-info {
+        flex-direction: column; /* Empilha */
+        align-items: flex-start;
+        gap: 10px; /* Adiciona espaço entre o título e o status */
+    }
+
+    .lote-card {
+        padding: 16px 20px;
+    }
 }
