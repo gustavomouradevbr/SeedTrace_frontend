@@ -77,6 +77,10 @@ h1 {
     line-height: 1.3;
 }
 
+a.button {
+    text-decoration: none;
+}
+
 .button:hover {
     transform: translateY(-2px); /* Efeito de levantar */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -145,7 +149,8 @@ h1 {
     margin-bottom: 6px;
 }
 
-.form-group input[type="text"] {
+.form-group input[type="text"],
+.form-group input[type="password"] {    
     width: 100%;
     padding: 14px 16px;
     font-size: 1rem; /* 16px */
@@ -157,7 +162,8 @@ h1 {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-group input[type="text"]:focus {
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
     outline: none;
     border-color: #34d399; /* Borda verde ao focar */
     box-shadow: 0 0 0 2px #d1fae5; /* Sombra verde clara */
@@ -433,4 +439,338 @@ h1 {
     .lote-card {
         padding: 16px 20px;
     }
+}
+
+/* ========================================= */
+/* === Estilos para Rastreamento de Lote === */
+/* ========================================= */
+
+.page-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.page-header .back-link {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.page-header .back-link:hover {
+    color: #059669;
+}
+
+.page-header .logout-link-header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #EF4444; /* Vermelho */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.page-header .logout-link-header:hover {
+    color: #b91c1c; /* Vermelho escuro */
+}
+
+/* Card de conteúdo geral para esta página */
+.content-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    margin-bottom: 18px; /* Usa o mesmo 'gap' do .lote-list */
+}
+
+.content-card h2 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+.content-card h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+.content-card h4 {
+    font-size: 1.05rem; /* 17px */
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+.card-detail {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.5;
+}
+.card-detail + .card-detail {
+    margin-top: 8px;
+}
+.card-detail strong {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
+/* Banner Verde (Previsão / Contato) */
+.banner-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.contact-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #34d399;
+    color: #064e3b;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: background-color 0.2s;
+}
+.contact-banner:hover {
+    background-color: #10b981;
+}
+
+/* Linha do Tempo (Timeline) */
+.status-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.status-timeline li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 24px;
+}
+/* Linha vertical conectora */
+.status-timeline li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 14px; /* Metade do tamanho do ícone */
+    top: 30px;
+    width: 2px;
+    height: 100%;
+    background-color: #e5e7eb; /* Cinza claro */
+}
+
+.status-timeline .icon {
+    font-size: 1.75rem; /* 28px */
+    line-height: 1;
+}
+.status-timeline .text h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.status-timeline .text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+/* Estilo da Etapa Concluída */
+.status-timeline li.done .text h4 {
+    color: #6b7280; /* Cinza para texto concluído */
+}
+
+/* Estilo da Etapa Ativa */
+.status-timeline li.active .text h4 {
+    color: #1f2937; /* Preto */
+}
+.status-timeline li.active::before {
+    background-color: #34d399; /* Linha verde */
+}
+
+.next-step {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #059669; /* Verde escuro */
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* Ajuste no cabeçalho em telas pequenas */
+@media (max-width: 600px) {
+    .page-header {
+        padding: 16px 20px;
+    }
+    .page-header .back-link {
+        font-size: 0.9rem;
+    }
+    .page-header .logout-link-header {
+        font-size: 0.9rem;
+    }
+    
+    .content-card h2 { font-size: 1.3rem; }
+    .content-card h3 { font-size: 1.15rem; }
+}
+
+/* ========================================= */
+/* === Estilos para Comprovante de Entrega === */
+/* ========================================= */
+
+.comprovante-header {
+    text-align: center;
+    padding-bottom: 24px;
+}
+.comprovante-icon {
+    margin-bottom: 16px;
+}
+.comprovante-header h2 {
+    margin-bottom: 4px;
+}
+
+hr.comprovante-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e5e7eb; /* Cinza bem claro */
+    margin: 0;
+}
+
+.comprovante-details {
+    padding: 12px 0; /* Espaço entre o divisor e o conteúdo */
+}
+
+.detail-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0; /* Espaço entre cada linha */
+}
+/* Linha fina entre os itens de detalhe */
+.detail-group + .detail-group {
+    border-top: 1px solid #f3f4f6; /* Cinza mais claro ainda */
+}
+
+.detail-group .label {
+    font-size: 0.95rem;
+    color: #6b7280; /* Cinza médio */
+    font-weight: 500;
+}
+.detail-group .value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1f2937; /* Cinza escuro */
+    text-align: right;
+}
+/* Modificador para o grupo "Prova de Recebimento" */
+.detail-group.stacked {
+    align-items: flex-start;
+}
+.detail-group.stacked .label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.comprovante-footer {
+    padding-top: 24px;
+}
+
+/* Novo Estilo de Botão (Azul) */
+.button-blue {
+    display: flex; /* Garante que o .button não seja coluna */
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #2563eb; /* Azul do rodapé */
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+.button-blue:hover {
+    background-color: #1d4ed8; /* Azul mais escuro */
+}
+
+/* ========================================= */
+/* === Estilos do Rastreamento (Variantes) === */
+/* ========================================= */
+
+/* Banner Azul (Info) */
+.banner-info {
+    background-color: #dbeafe; /* Azul claro */
+    color: #1e40af; /* Azul escuro */
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
+.banner-info strong {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.banner-info p {
+    font-size: 0.9rem;
+    color: #1e3a8a; /* Azul médio */
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Cor do texto do "Próximo Passo" (Azul) */
+.next-step.blue {
+    color: #1d4ed8; /* Azul */
+}
+
+/* ========================================= */
+/* === Estilos para Login do IPA === */
+/* ========================================= */
+
+.form-container .forgot-password-link {
+    display: block;
+    text-align: right; /* Alinha à direita */
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-decoration: none;
+    margin-top: -8px;  /* Puxa para mais perto do campo de senha */
+    margin-bottom: 24px; /* Espaço antes do botão */
+    transition: color 0.2s;
+}
+.form-container .forgot-password-link:hover {
+    color: #1f2937;
+    text-decoration: underline;
+}
+
+/* Ajuste para o botão secundário (cinza) dentro de um formulário
+  (para não ter o texto span menor) 
+*/
+.form-container .button.secondary {
+    font-size: 1.05rem; /* 17px */
+    padding: 15px 20px;
+    margin-top: 5px; /* Espaço acima do botão */
 }
