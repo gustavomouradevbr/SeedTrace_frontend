@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (botaoIPA) {
         botaoIPA.addEventListener("click", () => {
             console.log("Botão IPA clicado. Redirecionando para login-ipa.html");
-            // ATUALIZADO AQUI
             window.location.href = "login-ipa.html";
         });
     }
@@ -170,12 +169,179 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnAcessarIPA) {
         btnAcessarIPA.addEventListener("click", (event) => {
             event.preventDefault(); // Impede o formulário de recarregar
-            console.log("Botão Acessar (IPA) clicado.");
-            
-            // Ação: Mudar para o dashboard do IPA (nome futuro)
-            // window.location.href = "dashboard-ipa.html";
-            
-            alert("Login do IPA em construção!");
+            console.log("Botão Acessar (IPA) clicado. Redirecionando...");
+            window.location.href = "dashboard-ipa.html";
+        });
+    }
+
+
+    // --- LÓGICA DA TELA: dashboard-ipa.html ---
+    
+    const btnSairIPA = document.getElementById("btnSairIPA");
+    const btnRegistrarLote = document.getElementById("btnRegistrarLote");
+    
+    // Botão Sair (Reaproveitado em todo o dashboard IPA)
+    if (btnSairIPA) {
+        btnSairIPA.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("Botão Sair (IPA) clicado. Voltando para home...");
+            window.location.href = "boas-vindas.html";
+        });
+    }
+
+    // Botão "Registrar Novo Lote" (só existe em dashboard-ipa.html)
+    if (btnRegistrarLote) {
+        btnRegistrarLote.addEventListener("click", () => {
+            console.log("Botão Registrar Novo Lote clicado. Redirecionando...");
+            window.location.href = "registro-lote.html";
+        });
+    }
+
+
+    // --- LÓGICA DA TELA: registro-lote.html ---
+    
+    const btnVoltarEstoque = document.getElementById("btnVoltarEstoque");
+    const btnCancelarRegistro = document.getElementById("btnCancelarRegistro");
+    const btnSalvarRegistro = document.getElementById("btnSalvarRegistro");
+
+    if (btnVoltarEstoque) {
+        btnVoltarEstoque.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("Botão Voltar (Registro) clicado. Voltando para dashboard IPA...");
+            window.location.href = "dashboard-ipa.html";
+        });
+    }
+    
+    if (btnCancelarRegistro) {
+        btnCancelarRegistro.addEventListener("click", () => {
+            console.log("Botão Cancelar (Registro) clicado. Voltando para dashboard IPA...");
+            window.location.href = "dashboard-ipa.html";
+        });
+    }
+
+    if (btnSalvarRegistro) {
+        btnSalvarRegistro.addEventListener("click", () => {
+            console.log("Botão Salvar (Registro) clicado.");
+            alert("Lote salvo com sucesso! (Simulação)");
+            window.location.href = "dashboard-ipa.html";
+        });
+    }
+
+
+    // --- LÓGICA DA TELA: entregas-ipa.html ---
+    
+    const btnPlanejarEntrega = document.getElementById("btnPlanejarEntrega");
+    const btnsVerDetalhesEntrega = document.querySelectorAll(".entregas-table .action-link");
+
+    if (btnPlanejarEntrega) {
+        btnPlanejarEntrega.addEventListener("click", () => {
+            console.log("Botão Planejar Nova Entrega clicado.");
+            window.location.href = "planejar-entrega.html";
+        });
+    }
+
+    if (btnsVerDetalhesEntrega.length > 0) {
+        btnsVerDetalhesEntrega.forEach(link => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                console.log("Botão Ver Detalhes (Entrega) clicado.");
+                alert("Tela de Detalhes da Entrega em construção!");
+            });
+        });
+    }
+
+
+    // --- LÓGICA DA TELA: planejar-entrega.html ---
+
+    const btnVoltarEntregas = document.getElementById("btnVoltarEntregas");
+    const btnCancelarPlanejamento = document.getElementById("btnCancelarPlanejamento");
+    const btnSalvarPlanejamento = document.getElementById("btnSalvarPlanejamento");
+
+    if (btnVoltarEntregas) {
+        btnVoltarEntregas.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("Botão Voltar (Planejamento) clicado. Voltando...");
+            window.location.href = "entregas-ipa.html";
+        });
+    }
+    
+    if (btnCancelarPlanejamento) {
+        btnCancelarPlanejamento.addEventListener("click", () => {
+            console.log("Botão Cancelar (Planejamento) clicado. Voltando...");
+            window.location.href = "entregas-ipa.html";
+        });
+    }
+
+    if (btnSalvarPlanejamento) {
+        btnSalvarPlanejamento.addEventListener("click", () => {
+            console.log("Botão Salvar (Planejamento) clicado.");
+            alert("Nova entrega planejada com sucesso! (Simulação)");
+            window.location.href = "entregas-ipa.html";
+        });
+    }
+
+    
+    // --- LÓGICA DA TELA: agricultores-ipa.html ---
+    
+    const btnCadastrarProdutor = document.getElementById("btnCadastrarProdutor");
+    const btnsVerHistorico = document.querySelectorAll(".entregas-table .action-link");
+
+    if (btnCadastrarProdutor) {
+        btnCadastrarProdutor.addEventListener("click", () => {
+            console.log("Botão Cadastrar Produtor clicado.");
+            window.location.href = "cadastrar-agricultor.html";
+        });
+    }
+
+    if (btnsVerHistorico.length > 0) {
+        btnsVerHistorico.forEach(link => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                console.log("Botão Ver Histórico clicado.");
+                alert("Tela de Histórico do Agricultor em construção!");
+            });
+        });
+    }
+    
+
+    // --- LÓGICA DA TELA: cadastrar-agricultor.html ---
+    
+    const btnVoltarAgricultores = document.getElementById("btnVoltarAgricultores");
+    const btnCancelarCadastro = document.getElementById("btnCancelarCadastro");
+    const btnSalvarCadastro = document.getElementById("btnSalvarCadastro");
+
+    if (btnVoltarAgricultores) {
+        btnVoltarAgricultores.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("Botão Voltar (Cadastro) clicado. Voltando...");
+            window.location.href = "agricultores-ipa.html";
+        });
+    }
+    
+    if (btnCancelarCadastro) {
+        btnCancelarCadastro.addEventListener("click", () => {
+            console.log("Botão Cancelar (Cadastro) clicado. Voltando...");
+            window.location.href = "agricultores-ipa.html";
+        });
+    }
+
+    if (btnSalvarCadastro) {
+        btnSalvarCadastro.addEventListener("click", () => {
+            console.log("Botão Salvar (Cadastro) clicado.");
+            alert("Novo agricultor cadastrado com sucesso! (Simulação)");
+            window.location.href = "agricultores-ipa.html";
+        });
+    }
+
+
+    // --- LÓGICA DA TELA: relatorios-ipa.html ---
+    
+    const btnGerarRelatorio = document.getElementById("btnGerarRelatorio");
+
+    if (btnGerarRelatorio) {
+        btnGerarRelatorio.addEventListener("click", () => {
+            console.log("Botão Gerar Relatório clicado.");
+            alert("Gerando seu relatório! (Simulação)");
         });
     }
 
