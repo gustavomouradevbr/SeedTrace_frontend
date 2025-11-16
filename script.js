@@ -1,7 +1,7 @@
 // Garante que o script só rode depois que o HTML carregar
 document.addEventListener("DOMContentLoaded", () => {
 
-    // --- LÓGICA DA TELA: boas-vindas.html ---
+    // --- LÓGICA DA TELA: index.html ---
     
     const botaoAgricultor = document.getElementById("btnAgricultor");
     const botaoIPA = document.getElementById("btnIPA");
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSair.addEventListener("click", (event) => {
             event.preventDefault(); 
             console.log("Botão Sair clicado. Voltando para home...");
-            window.location.href = "boas-vindas.html";
+            window.location.href = "index.html";
         });
     }
 
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSairRastreio.addEventListener("click", (event) => {
             event.preventDefault();
             console.log("Botão Sair (Rastreio) clicado. Voltando para home...");
-            window.location.href = "boas-vindas.html";
+            window.location.href = "index.html";
         });
     }
 
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSairComprovante.addEventListener("click", (event) => {
             event.preventDefault();
             console.log("Botão Sair (Comprovante) clicado. Voltando para home...");
-            window.location.href = "boas-vindas.html";
+            window.location.href = "index.html";
         });
     }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSairRastreioSorgo.addEventListener("click", (event) => {
             event.preventDefault();
             console.log("Botão Sair (Rastreio Sorgo) clicado. Voltando para home...");
-            window.location.href = "boas-vindas.html";
+            window.location.href = "index.html";
         });
     }
 
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnSairIPA.addEventListener("click", (event) => {
             event.preventDefault();
             console.log("Botão Sair (IPA) clicado. Voltando para home...");
-            window.location.href = "boas-vindas.html";
+            window.location.href = "index.html";
         });
     }
 
